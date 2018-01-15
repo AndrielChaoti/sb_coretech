@@ -1,0 +1,6 @@
+Level 1: tungsten x6 > tungsten x8 > tungsten x10
+Level 2: titanium x8 > titanium x10 > titanium x12
+Level 3: durasteel x10 > durasteel x12 > durasteel x14
+Level 4: teir5bars x4 > teir5bars x5 > teir5bars x6
+Level 5: solarium x8 + ancientessence x800 > solarium x10 + ancientessence x1000 > solarium x12 + ancientessence x1200 > 
+Level 6+: solarium x15 + + ancientessence x1500 > exponentially growing

@@ -1,0 +1,14 @@
+{
+	"input" : [
+		{"item" : "tungstenbar", "count" : 10},
+		{"item" : "corefragmentore", "count" : 5},
+		{"item" : "moonrock", "count" : 50},
+		{"item" : "blaststone", "count" : 5}
+	],
+	"output": {
+		"item" : "acwupgradetable",
+		"count" : 1
+	},
+	"duration" : 5,
+	"groups" : [ "inventorstable2", "craftingstations", "all" ]
+}

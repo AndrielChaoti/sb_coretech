@@ -1,0 +1,8 @@
+{
+	"name" : "weaponUpgradeTable",
+	"friendlyName" : "Andriel's Weapon Upgrader",
+	"description" : "Gives you a new crafting table to upgrade your randomly generated weapons",
+	"author" : "AndrielChaoti, Dawn Felstar",
+	"version" : "v0.1",
+	"priority" : 0
+}
