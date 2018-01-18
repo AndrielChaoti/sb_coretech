@@ -1,3 +1,16 @@
+--[[
+	Project:		acwupgradetable
+	Friendly Name:	Weapon Upgrade Table
+	Author:			AndrielChaoti
+
+
+	File:			acwupgradetable.lua
+	Purpose:		The main script file for the mod
+
+	Copyright (c) Donald Granger. All Rights Reserved
+	Licensed under the MIT License. See LICENSE file in the project root
+	for full license information.
+]]
 function init()
 	-- hide unused ui elements
 	widget.setText("upgradeCost.itemName", "")

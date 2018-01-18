@@ -1,6 +1,19 @@
+/*
+    Project:        acwupgradetable
+    Friendly Name:  Weapon Upgrade Table
+    Author:         AndrielChaoti
+
+
+    File:           _metadata
+    Purpose:        Mod display information
+
+    Copyright (c) Donald Granger. All Rights Reserved
+    Licensed under the MIT License. See LICENSE file in the project root
+    for full license information.
+*/
 {
-	"name" : "weaponUpgradeTable",
-	"friendlyName" : "Andriel's Weapon Upgrader",
+	"name" : "acwupgradetable",
+	"friendlyName" : "Weapon Upgrade Table",
 	"description" : "Gives you a new crafting table to upgrade your randomly generated weapons",
 	"author" : "AndrielChaoti, Dawn Felstar",
 	"version" : "v0.1",
