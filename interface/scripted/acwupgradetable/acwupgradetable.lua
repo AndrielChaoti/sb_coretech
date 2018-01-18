@@ -95,7 +95,7 @@ end
 
 function uninit()
 	-- give the player back their item if we're not upgrading it.
-	if self.upgradeState == false and self.itemStorage[1] then
+	if self.upgradeState.upgrading == false and self.itemStorage[1] then
 		local item = self.itemStorage[1]
 		world.containerTakeAll(self._id)
 		player.giveItem(item)
