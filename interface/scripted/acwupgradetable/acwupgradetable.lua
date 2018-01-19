@@ -11,6 +11,14 @@
 	Licensed under the MIT License. See LICENSE file in the project root
 	for full license information.
 ]]
+
+local rarityEnum = {
+    ["common"] = 1,
+    ["uncommon"] = 2,
+    ["rare"] = 3,
+    ["legendary"] = 4
+}
+
 function init()
 	-- hide unused ui elements
 	widget.setText("upgradeCost.itemName", "")
@@ -48,6 +56,18 @@ function update(dt)
 			sb.logInfo("item upgraded")
 			local newItem = self.itemStorage[1]
 			newItem.parameters.level = self.upgradeConfig.newLevel
+			-- Fixes a spawned item's rarity
+			if newItem.parameters.rarity == nil then
+					newItem.parameters.rarity = "common"
+			end
+			-- updates the rarity of the item
+			if newItem.parameters.level >= 6 and rarityEnum[newItem.parameters.rarity] <= rarityEnum["legendary"] then
+					newItem.parameters.rarity = "legendary"
+			elseif newItem.parameters.level >= 4 and rarityEnum[newItem.parameters.rarity] <= rarityEnum["rare"] then
+					newItem.parameters.rarity = "rare"
+			elseif newItem.parameters.level >= 2 and rarityEnum[newItem.parameters.rarity] <= rarityEnum["uncommon"] then
+					newItem.parameters.rarity = "uncommon"
+			end
 
 			world.containerTakeAll(self._id)
 			world.containerAddItems(self._id, newItem)
@@ -81,6 +101,7 @@ function update(dt)
 				script.setUpdateDelta(1)
 				local pos = world.entityPosition(self._id)
 				world.debugText("itemlevel: %s", self.itemStorage[1].parameters.level, pos, "red")
+				world.debugText("itemRarity: %s", self.itemStorage[1].parameters.rarity, {pos[1],pos[2]+1.5}, "red")
 				world.debugText("upstate: %s", self.upgradeState.upgrading, {pos[1],pos[2]+1}, "red")
 				world.debugText("hasitem: %s", self.hasValidItem, {pos[1],pos[2]+0.5}, "red")
 
