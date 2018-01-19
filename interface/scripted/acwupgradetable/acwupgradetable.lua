@@ -24,12 +24,6 @@ function init()
 	widget.setText("upgradeCost.itemName", "")
 	widget.setText("upgradeCost.itemCount", "")
 
-	--widget.setVisible("stopBtn", false)
-	--widget.setVisible("baseStats", false)
-	--widget.setVisible("upgradeStats", false)
-	--widget.setVisible("upgradeCost.currencyCost", false)
-	--widget.setButtonEnabled("upgradeBtn", false)
-
 	-- init variables
 	if not self.upgradeState then
 		self.upgradeState = {
@@ -51,6 +45,15 @@ end
 function update(dt)
 
 	if self.upgradeState.upgrading == true then
+		-- show the upgrade time remaining.
+		local timeLeft = os.difftime(self.upgradeState.endTime, self.upgradeState.startTime)
+		if timeLeft <= 60 then
+			widget.setText("upgradeSlot.timer", string.format("%02d s", timeLeft))
+		else
+			widget.setText("upgradeSlot.timer", string.format("%d m, %02d s", timeLeft / 60, timeLeft % 60))
+		end
+
+		-- Handle a completed upgrade
 		if os.time() >= self.upgradeState.endTime then
 			-- HOLY SHIT UPGRADE THE ITEM
 			sb.logInfo("item upgraded")
@@ -78,15 +81,12 @@ function update(dt)
 			self.upgradeState.upgrading = false
 
 			-- restore the itemgrid:
-			widget.setVisible("lockeditemGrid", false)
-			widget.setItemSlotItem("lockeditemGrid", {name = ""})
-			widget.setVisible("padlock", false)
-			widget.setVisible("itemGrid", true)
+			switchUpgradeMode(false)
 		end
 	end
 
+	-- update the current inventory list
 	self.itemStorage = widget.itemGridItems("itemGrid")
-
 
 	-- check if item in slot
 	if not self.itemStorage[1] then
@@ -129,7 +129,6 @@ end
 
 function toggleInterface(item)
 	if not item then
-		widget.setVisible("stopBtn", false)
 		widget.setVisible("baseStats", false)
 		widget.setVisible("upgradeStats", false)
 		widget.setVisible("upgradeCost.currencyCost", false)
@@ -137,19 +136,19 @@ function toggleInterface(item)
 		widget.setText("upgradeCost.itemName", "")
 		widget.setText("upgradeCost.itemCount", "")
 		widget.setItemSlotItem("upgradeCost.itemSlot", {name=""})
-		widget.setVisible("lockeditemGrid", false)
-		widget.setVisible("padlock", false)
+
+		switchUpgradeMode(false)
 		return
 	else
 		if not item.parameters.level then
 			item.parameters.level = 1
 		end
+		if item.parameters.level == 10 then
+			widget.setText("upgradeCost.itemName", "MAX LEVEL!")
+			return
+		end
 		if item.parameters.level >= 5 then
 			widget.setVisible("upgradeCost.currencyCost", true)
-		end
-		if item.parameters.level == 10 then
-			-- handle this more gracefully
-			return
 		end
 		widget.setVisible("baseStats", true)
 		widget.setVisible("upgradeStats", true)
@@ -165,6 +164,20 @@ function toggleInterface(item)
 		end
 	end
 end
+
+function switchUpgradeMode(currentState)
+	widget.setVisible("lockeditemGrid", not currentState)
+	if currentState == false then
+		widget.setItemSlotItem("lockeditemGrid", {name = ""})
+	end
+
+	widget.setVisible("padlock", not currentState)
+	widget.setVisible("itemGrid", currentState)
+	widget.setVisible("upgradeBtn", currentState)
+	widget.setVisible("stopBtn", false)
+	widget.setVisible("upgradeSlot.timer", currentState)
+end
+
 
 function calculateUpgrade(item, wepType)
 	--sb.logInfo("%s\t%s\t%s", item.name, item.parameters.level, wepType)
@@ -184,7 +197,9 @@ function calculateUpgrade(item, wepType)
 	end
 
 	-- sanity checking:
-	if (not self.upgradeConfig.material) and (not self.upgradeConfig.materialAmount) then error("missing upgrade material or amount.") end
+	if (not self.upgradeConfig.material) and (not self.upgradeConfig.materialAmount) then
+		error("missing upgrade material or amount.")
+	end
 
 	-- cache important thingers.
 	local upgradeItemDesc = root.itemConfig({name = self.upgradeConfig.material})
@@ -218,6 +233,20 @@ function calculateUpgrade(item, wepType)
 	end
 end
 
+function stopBtn()
+	-- stop upgrade process
+	if not self.upgradeState.upgrading then return end
+
+	self.upgradeState.upgrading = false
+	switchUpgradeMode(false)
+
+	-- give the player their items back
+	if not self.upgradeConfig then return end
+	player.giveItem({name = self.upgradeConfig.material, count = self.upgradeConfig.materialAmount})
+	player.giveCurrency("essence", self.upgradeConfig.currencyNeeded)
+end
+
+
 function upgradeBtn()
 	if not self.hasValidItem then return end
 	if not self.upgradeConfig then return end
@@ -228,7 +257,7 @@ function upgradeBtn()
 		consumed = player.consumeItem({name = self.upgradeConfig.material, count = self.upgradeConfig.materialAmount})
 		-- consume currency
 		if self.upgradeConfig.currencyNeeded > 0 then
-			consumed = player.consumeCurrency("essence", self.upgradeInfo.currencyNeeded)
+			consumed = player.consumeCurrency("essence", self.upgradeConfig.currencyNeeded)
 		end
 		-- couldn't consume items, don't upgrade
 		if consumed == false then return end
@@ -238,10 +267,8 @@ function upgradeBtn()
 	self.upgradeState.endTime = self.upgradeState.startTime + self.upgradeConfig.timeNeeded
 
 	-- lock the upgrade slot
-	widget.setVisible("lockeditemGrid", true)
 	widget.setItemSlotItem("lockeditemGrid", self.itemStorage[1])
-	widget.setVisible("padlock", true)
-	widget.setVisible("itemGrid", false)
+	switchUpgradeMode(true)
 
 	-- skip timer in admin mode
 	if player.isAdmin() then
@@ -249,5 +276,4 @@ function upgradeBtn()
 	end
 
 	self.upgradeState.upgrading = true
-	--self.upgradeStart = os.
 end
