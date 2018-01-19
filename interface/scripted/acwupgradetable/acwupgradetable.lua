@@ -16,7 +16,8 @@ local rarityEnum = {
   ["common"] = 1,
   ["uncommon"] = 2,
   ["rare"] = 3,
-  ["legendary"] = 4
+  ["legendary"] = 4,
+  ["essential"] = 5
 }
 
 function init()
