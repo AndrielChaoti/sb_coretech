@@ -47,10 +47,10 @@ function update(dt)
 	if self.upgradeState.upgrading == true then
 		-- show the upgrade time remaining.
 		local timeLeft = os.difftime(self.upgradeState.endTime, os.time())
-		if timeLeft <= 60 then
+		if timeLeft < 60 then
 			widget.setText("upgradeSlot.timer", string.format("%02d s", timeLeft))
 		else
-			widget.setText("upgradeSlot.timer", string.format("%d m, %02d s", math.floor(timeLeft / 60), timeLeft % 60))
+			widget.setText("upgradeSlot.timer", string.format("%d:%02d", math.floor(timeLeft / 60), timeLeft % 60))
 		end
 
 		-- Handle a completed upgrade
