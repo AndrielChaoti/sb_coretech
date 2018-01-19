@@ -13,10 +13,10 @@
 ]]
 
 local rarityEnum = {
-    ["common"] = 1,
-    ["uncommon"] = 2,
-    ["rare"] = 3,
-    ["legendary"] = 4
+  ["common"] = 1,
+  ["uncommon"] = 2,
+  ["rare"] = 3,
+  ["legendary"] = 4
 }
 
 function init()
@@ -58,15 +58,19 @@ function update(dt)
 			newItem.parameters.level = self.upgradeConfig.newLevel
 			-- Fixes a spawned item's rarity
 			if newItem.parameters.rarity == nil then
-					newItem.parameters.rarity = "common"
+				for k, _ in pairs(rarityEnum) do
+					if string.find(newItem.name, k) then
+						newItem.parameters.rarity = k
+					end
+				end
 			end
 			-- updates the rarity of the item
 			if newItem.parameters.level >= 6 and rarityEnum[newItem.parameters.rarity] <= rarityEnum["legendary"] then
-					newItem.parameters.rarity = "legendary"
+				newItem.parameters.rarity = "legendary"
 			elseif newItem.parameters.level >= 4 and rarityEnum[newItem.parameters.rarity] <= rarityEnum["rare"] then
-					newItem.parameters.rarity = "rare"
+				newItem.parameters.rarity = "rare"
 			elseif newItem.parameters.level >= 2 and rarityEnum[newItem.parameters.rarity] <= rarityEnum["uncommon"] then
-					newItem.parameters.rarity = "uncommon"
+				newItem.parameters.rarity = "uncommon"
 			end
 
 			world.containerTakeAll(self._id)
