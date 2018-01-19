@@ -46,11 +46,11 @@ function update(dt)
 
 	if self.upgradeState.upgrading == true then
 		-- show the upgrade time remaining.
-		local timeLeft = os.difftime(self.upgradeState.endTime, self.upgradeState.startTime)
+		local timeLeft = os.difftime(self.upgradeState.endTime, os.time())
 		if timeLeft <= 60 then
 			widget.setText("upgradeSlot.timer", string.format("%02d s", timeLeft))
 		else
-			widget.setText("upgradeSlot.timer", string.format("%d m, %02d s", timeLeft / 60, timeLeft % 60))
+			widget.setText("upgradeSlot.timer", string.format("%d m, %02d s", math.floor(timeLeft / 60), timeLeft % 60))
 		end
 
 		-- Handle a completed upgrade
@@ -166,15 +166,15 @@ function toggleInterface(item)
 end
 
 function switchUpgradeMode(currentState)
-	widget.setVisible("lockeditemGrid", not currentState)
+	widget.setVisible("lockeditemGrid", currentState)
 	if currentState == false then
 		widget.setItemSlotItem("lockeditemGrid", {name = ""})
 	end
 
-	widget.setVisible("padlock", not currentState)
-	widget.setVisible("itemGrid", currentState)
-	widget.setVisible("upgradeBtn", currentState)
-	widget.setVisible("stopBtn", false)
+	widget.setVisible("padlock", currentState)
+	widget.setVisible("itemGrid", not currentState)
+	widget.setVisible("upgradeBtn", not currentState)
+	widget.setVisible("stopBtn", currentState)
 	widget.setVisible("upgradeSlot.timer", currentState)
 end
 
@@ -243,7 +243,7 @@ function stopBtn()
 	-- give the player their items back
 	if not self.upgradeConfig then return end
 	player.giveItem({name = self.upgradeConfig.material, count = self.upgradeConfig.materialAmount})
-	player.giveCurrency("essence", self.upgradeConfig.currencyNeeded)
+	player.addCurrency("essence", self.upgradeConfig.currencyNeeded)
 end
 
 
