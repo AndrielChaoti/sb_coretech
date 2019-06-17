@@ -1,22 +1,12 @@
-/*
-    Project:        acwupgradetable
-    Friendly Name:  Weapon Upgrade Table
-    Author:         AndrielChaoti
-
-
-    File:           _metadata
-    Purpose:        Mod display information
-
-    Copyright (c) Donald Granger. All Rights Reserved
-    Licensed under the MIT License. See LICENSE file in the project root
-    for full license information.
-*/
 {
-	"name" : "acwupgradetable",
-	"friendlyName" : "Weapon Upgrade Table",
-	"description" : "Gives you a new crafting table to upgrade your randomly generated weapons",
-	"author" : "AndrielChaoti, Dawn Felstar",
-	"version" : "v1.0_RC2",
-    "include": ["FrackinUniverse"],
-	"priority" : 0
+  "author" : "AndrielChaoti, Dawn Felstar",
+  "description" : "Gives you a new crafting table to upgrade your randomly generated weapons",
+  "friendlyName" : "Weapon Upgrade Table",
+  "includes" : ["FrackinUniverse"],
+  "link" : "steam://url/CommunityFilePage/1772732697",
+  "name" : "acwupgradetable",
+  "priority" : 0,
+  "steamContentId" : "1772732697",
+  "tags" : "Crafting and Building|Weapons",
+  "version" : "v1.0_RC3"
 }
