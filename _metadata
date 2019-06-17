@@ -16,6 +16,7 @@
 	"friendlyName" : "Weapon Upgrade Table",
 	"description" : "Gives you a new crafting table to upgrade your randomly generated weapons",
 	"author" : "AndrielChaoti, Dawn Felstar",
-	"version" : "v1.0_RC1",
+	"version" : "v1.0_RC2",
+    "include": ["FrackinUniverse"],
 	"priority" : 0
 }
