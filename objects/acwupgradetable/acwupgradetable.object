@@ -72,6 +72,7 @@
     "soundEffect" : "/sfx/objects/scififurnace.ogg",
     "soundEffectRangeMultiplier" : 1.0,
 
+    "scripts": ["tablescript.lua"],
     "objectType": "container",
     "uiConfig" : "/interface/scripted/acwupgradetable/acwupgradetablegui.config",
     "subtitle" : "Upgrades generated weapons",
