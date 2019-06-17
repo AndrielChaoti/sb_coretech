@@ -58,7 +58,7 @@ luac.out
 
 # project files should be checked into the repository, unless a significant
 # proportion of contributors will probably not be using SublimeText
-# *.sublime-project
+*.sublime-project
 
 # sftp configuration file
 sftp-config.json
@@ -102,3 +102,5 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/lua,git,windows,sublimetext
+
+/misc/weaponupgradetable.sublime-project
