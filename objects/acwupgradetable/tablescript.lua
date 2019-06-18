@@ -8,7 +8,7 @@ function init(...)
     end
 
     message.setHandler("acUpgradeSet", function(...)
-        sb.logInfo("%s", {...})
+        --sb.logInfo("%s", {...})
         self.upgradeState, self.upgradeConfig = select(3,...)
     end)
 

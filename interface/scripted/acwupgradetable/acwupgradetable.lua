@@ -51,7 +51,7 @@ function update(dt)
 
     -- ask if we were upgrading
     if (self.upgradeRPC and self.upgradeRPC:finished()) then
-        sb.logInfo("%s", self.upgradeRPC:result())
+        --sb.logInfo("%s", self.upgradeRPC:result())
         self.upgradeState = self.upgradeRPC:result()[1]
         self.upgradeConfig = self.upgradeRPC:result()[2]
 
@@ -72,10 +72,10 @@ function update(dt)
         -- Handle a completed upgrade
         if os.time() >= self.upgradeState.endTime then
             -- HOLY SHIT UPGRADE THE ITEM
-            sb.logInfo("item upgraded")
-            sb.logInfo("%s", self.itemStorage)
+            --sb.logInfo("item upgraded")
+            --sb.logInfo("%s", self.itemStorage)
             local newItem = self.itemStorage[1]
-            sb.logInfo("%s", newItem)
+            -- sb.logInfo("%s", newItem)
             newItem.parameters.level = self.upgradeConfig.newLevel
             -- Fixes a spawned item's rarity
             if newItem.parameters.rarity == nil then
@@ -121,13 +121,13 @@ function update(dt)
                     toggleInterface(self.itemStorage[1])
 
                     -- some debuggering
-                    script.setUpdateDelta(1)
-                    local pos = world.entityPosition(self._id)
-                    world.debugText("itemlevel: %s", self.itemStorage[1].parameters.level, pos, "red")
-                    world.debugText("itemRarity: %s", self.itemStorage[1].parameters.rarity, {pos[1],pos[2]+1.5}, "red")
-                    world.debugText("upstate: %s", self.upgradeState.upgrading, {pos[1],pos[2]+1}, "red")
-                    world.debugText("hasitem: %s", self.hasValidItem, {pos[1],pos[2]+0.5}, "red")
-                    return
+                    -- script.setUpdateDelta(1)
+                    -- local pos = world.entityPosition(self._id)
+                    -- world.debugText("itemlevel: %s", self.itemStorage[1].parameters.level, pos, "red")
+                    -- world.debugText("itemRarity: %s", self.itemStorage[1].parameters.rarity, {pos[1],pos[2]+1.5}, "red")
+                    -- world.debugText("upstate: %s", self.upgradeState.upgrading, {pos[1],pos[2]+1}, "red")
+                    -- world.debugText("hasitem: %s", self.hasValidItem, {pos[1],pos[2]+0.5}, "red")
+                    -- return
                 end
             end
             -- the item actually isn't valid, clear the interface
@@ -213,7 +213,7 @@ end
 
 
 function calculateUpgrade(item, wepType)
-    sb.logInfo("%s\t%s\t%s", item.name, item.parameters.level, wepType)
+    --sb.logInfo("%s\t%s\t%s", item.name, item.parameters.level, wepType)
     if not self.hasValidItem then return end
 
     -- get item params for upgrading
