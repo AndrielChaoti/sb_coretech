@@ -1,0 +1,8 @@
+{
+  "name" : "acwarpsickness",
+  "blockingStat" : "",
+  "effectConfig" : {},
+  "defaultDuration" : 300,
+  "label" : "Warp Core Sickness",
+  "icon" : "/stats/effects/acwarpsickness/acwarpsickness.png"
+}

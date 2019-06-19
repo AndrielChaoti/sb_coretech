@@ -18,5 +18,19 @@
         "value": {
             "item": "acwupgradetable"
         }
+    },
+    {
+        "op": "add",
+        "path": "/defaultBlueprints/tier1/-",
+        "value": {
+            "item": "blaststone"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/defaultBlueprints/tier1/-",
+        "value": {
+            "item": "acwarpcore"
+        }
     }
 ]

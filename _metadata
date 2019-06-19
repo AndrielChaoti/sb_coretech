@@ -1,7 +1,7 @@
 {
   "author" : "AndrielChaoti, Dawn Felstar",
-  "description" : "Gives you a new crafting table to upgrade your randomly generated weapons",
-  "friendlyName" : "Weapon Upgrade Table",
+  "description" : "Gives you more things to do with core fragments!",
+  "friendlyName" : "Core Tech",
   "includes" : ["FrackinUniverse"],
   "link" : "steam://url/CommunityFilePage/1772732697",
   "name" : "acwupgradetable",
