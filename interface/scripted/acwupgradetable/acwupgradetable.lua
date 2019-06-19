@@ -13,11 +13,11 @@
 ]]
 
 local rarityEnum = {
-  ["common"] = 1,
-  ["uncommon"] = 2,
-  ["rare"] = 3,
-  ["legendary"] = 4,
-  ["essential"] = 5
+  "common",
+  "uncommon",
+  "rare",
+  "legendary",
+  "essential"
 }
 
 function init()
@@ -75,25 +75,11 @@ function update(dt)
             --sb.logInfo("item upgraded")
             --sb.logInfo("%s", self.itemStorage)
             local newItem = self.itemStorage[1]
-            -- sb.logInfo("%s", newItem)
+            sb.logInfo("%s", newItem)
             newItem.parameters.level = self.upgradeConfig.newLevel
-            -- Fixes a spawned item's rarity
-            if newItem.parameters.rarity == nil then
-                for k, _ in pairs(rarityEnum) do
-                    if string.find(newItem.name, k) then
-                        newItem.parameters.rarity = k
-                    else
-                        newItem.parameters.rarity = "uncommon"
-                    end
-                end
-            end
             -- updates the rarity of the item
-            if newItem.parameters.level >= 7 and rarityEnum[newItem.parameters.rarity] <= rarityEnum["legendary"] then
+            if newItem.parameters.level >= 7 then
                 newItem.parameters.rarity = "legendary"
-            --[[elseif newItem.parameters.level >= 4 and rarityEnum[newItem.parameters.rarity] <= rarityEnum["rare"] then
-                newItem.parameters.rarity = "rare"
-            elseif newItem.parameters.level >= 2 and rarityEnum[newItem.parameters.rarity] <= rarityEnum["uncommon"] then
-                newItem.parameters.rarity = "uncommon"]]
             end
 
             world.containerTakeAll(self._id)
@@ -119,14 +105,6 @@ function update(dt)
                     -- valid item inserted switch flag.
                     self.hasValidItem = true
                     toggleInterface(self.itemStorage[1])
-
-                    -- some debuggering
-                    script.setUpdateDelta(1)
-                    -- local pos = world.entityPosition(self._id)
-                    -- world.debugText("itemlevel: %s", self.itemStorage[1].parameters.level, pos, "red")
-                    -- world.debugText("itemRarity: %s", self.itemStorage[1].parameters.rarity, {pos[1],pos[2]+1.5}, "red")
-                    -- world.debugText("upstate: %s", self.upgradeState.upgrading, {pos[1],pos[2]+1}, "red")
-                    -- world.debugText("hasitem: %s", self.hasValidItem, {pos[1],pos[2]+0.5}, "red")
                     return
                 end
             end
