@@ -121,13 +121,13 @@ function update(dt)
                     toggleInterface(self.itemStorage[1])
 
                     -- some debuggering
-                    -- script.setUpdateDelta(1)
+                    script.setUpdateDelta(1)
                     -- local pos = world.entityPosition(self._id)
                     -- world.debugText("itemlevel: %s", self.itemStorage[1].parameters.level, pos, "red")
                     -- world.debugText("itemRarity: %s", self.itemStorage[1].parameters.rarity, {pos[1],pos[2]+1.5}, "red")
                     -- world.debugText("upstate: %s", self.upgradeState.upgrading, {pos[1],pos[2]+1}, "red")
                     -- world.debugText("hasitem: %s", self.hasValidItem, {pos[1],pos[2]+0.5}, "red")
-                    -- return
+                    return
                 end
             end
             -- the item actually isn't valid, clear the interface
