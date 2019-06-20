@@ -12,14 +12,6 @@
     for full license information.
 ]]
 
-local rarityEnum = {
-  "common",
-  "uncommon",
-  "rare",
-  "legendary",
-  "essential"
-}
-
 function init()
     -- hide unused ui elements
     widget.setText("upgradeCost.itemName", "")
