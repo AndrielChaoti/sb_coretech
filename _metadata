@@ -1,6 +1,6 @@
 {
   "author" : "AndrielChaoti, Dawn Felstar",
-  "description" : "Gives you more things to do with core fragments!",
+  "description" : "Gives you more things to do with core fragments!\n\n[h1]What this mod adds[/h1]\n[b][u]Weapon Upgrade Table[/u][/b]\n[img]https://i.imgur.com/NJxmHO1.png[/img]\nCrafted at the Engineer's Table, this item lets you upgrade the randomly generated weapons you find in the game world.\n\n[b][u]Warp Core[/u][/b] \nWarps you back to your ship from anywhere on a planet. (Does not stack, 5 minute cooldown)\n\n[b][u]Blaststone[/u][/b] \n[i]Just kidding, I lied. We didn't add blaststone[/i], but we did add a new way to craft it. 10 Cobblestone and 5 Lava at a wooden workbench will make 10 blaststone.",
   "friendlyName" : "Core Tech",
   "includes" : ["FrackinUniverse"],
   "link" : "steam://url/CommunityFilePage/1772732697",
@@ -8,5 +8,5 @@
   "priority" : 0,
   "steamContentId" : "1772732697",
   "tags" : "Crafting and Building|Weapons",
-  "version" : "v1.1_RC2"
+  "version" : "v1.1_RC4"
 }
