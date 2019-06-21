@@ -1,0 +1,27 @@
+{
+  "materialId" : 52570,
+  "materialName" : "ct_coreblock",
+  "particleColor" : [217, 101, 0, 255],
+  "itemDrop" : "ct_coreblock",
+
+  "description" : "This block doesn't have a description",
+  "shortdescription" : "Core Fragment Block",
+  "glitchDescription" : "Confused. This block does not seem to have a description.",
+  "floranDescription" : "Floran not know what thiss iss.",
+  "novakidDescription" : "It glows, but I can't find any words for it.",
+
+  "footstepSound" : "/sfx/blocks/footstep_stone3.ogg",
+  "health" : 25,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/slopedmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "ct_coreblock.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : true,
+    "multiColored" : false,
+    "zLevel" : 1719,
+    "radiantLight" : [217, 101, 0]
+  }
+}

@@ -1,18 +1,35 @@
+require "/scripts/util.lua"
+
 function init(...)
-    if not self.upgradeState then
-        self.upgradeState = {
-            upgrading = false,
-            startTime = 0,
-            endTime = 0,
-        }
+    if root.itemConfig({ name="ct_wupgradetable", count=1}) then
+        self.pos = object.position()
+        self.dir = object.direction()
+        object.smash(true)
+        world.placeObject("ct_wupgradetable", self.pos, self.dir)
     end
-
-    message.setHandler("acUpgradeSet", function(...)
-        --sb.logInfo("%s", {...})
-        self.upgradeState, self.upgradeConfig = select(3,...)
-    end)
-
-    message.setHandler("acUpgradeGet", function(...)
-        return {self.upgradeState, self.upgradeConfig or {}};
-     end)
 end
+
+function update()
+    if root.itemConfig({ name="ct_wupgradetable", count=1}) then
+        self.pos = object.position()
+        self.dir = object.direction()
+        object.smash(true)
+        world.placeObject("ct_wupgradetable", self.pos, self.dir)
+        --sb.logInfo("%s", "smashed")
+        --if not self.co then
+        --    self.co = coroutine.create(function()
+        --        util.wait(1, function()
+        --            sb.logInfo("coin")
+        --
+        --        end)
+        --    end)
+        --     coroutine.resume(self.co)
+        --end
+
+    end
+end
+
+function uninit()
+    world.placeObject("ct_wupgradetable", self.pos, self.dir)
+end
+

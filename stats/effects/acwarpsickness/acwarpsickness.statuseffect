@@ -4,5 +4,6 @@
   "effectConfig" : {},
   "defaultDuration" : 300,
   "label" : "Warp Core Sickness",
-  "icon" : "/stats/effects/acwarpsickness/acwarpsickness.png"
+  "icon" : "/stats/effects/acwarpsickness/acwarpsickness.png",
+  "scripts": [ "acwarpsickness.lua" ]
 }

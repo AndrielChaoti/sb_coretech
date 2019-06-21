@@ -1,0 +1,11 @@
+[
+  {
+    "op": "add",
+    "path": "/learnBlueprintsOnPickup",
+    "value": [
+      "ct_warpcore",
+      "ct_coreblock",
+      "ct_wupgradetable"
+    ]
+  }
+]

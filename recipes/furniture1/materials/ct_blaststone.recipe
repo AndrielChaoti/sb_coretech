@@ -1,0 +1,25 @@
+/*
+	Project:		acwupgradetable
+	Friendly Name:	Weapon Upgrade Table
+	Author:			Dawn Felstar
+
+
+	File:			acwupgradetable.recipe
+	Purpose:		Recipe information.
+
+	Copyright (c) Donald Granger. All Rights Reserved
+	Licensed under the MIT License. See LICENSE file in the project root
+	for full license information.
+*/
+{
+	"input" : [
+		{"item" : "cobblestonematerial", "count" : 10},
+		{"item" : "liquidlava", "count" : 5}
+	],
+	"output": {
+		"item" : "blaststone",
+		"count" : 10
+	},
+	"duration" : 5,
+	"groups"  : [ "craftingfurniture", "materials", "all" ]
+}

@@ -1,0 +1,15 @@
+{
+  "itemName" : "ct_coreblock",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "Common",
+  "inventoryIcon" : "ct_coreblock.png",
+
+  "description" : "The warm glow of lava without the heat.",
+  "shortdescription" : "Core Fragment Block",
+  "glitchDescription" : "Curious. Microscopic bacteria in this rock are glowing yellow faintly.",
+  "floranDescription" : "Floran likess yellow glowing rockss.",
+  "novakidDescription" : "This rock is glowin' yellow but not givin' off any heat.",
+
+  "materialId" : 52570
+}

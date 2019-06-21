@@ -1,0 +1,82 @@
+/*
+    Project:        acwupgradetable
+    Friendly Name:  Weapon Upgrade Table
+    Author:         AndrielChaoti
+
+
+    File:           acwupgradetable.object
+    Purpose:        Object configuration
+
+    Copyright (c) Donald Granger. All Rights Reserved
+    Licensed under the MIT License. See LICENSE file in the project root
+    for full license information.
+*/
+{
+    "objectName" : "ct_wupgradetable",
+    "colonyTags" : [ "combat", "crafting" ],
+    "printable" : false,
+    "rarity" : "Rare",
+    "description" : "A table where you can tinker with your weapons and make them better.",
+    "shortdescription" : "^orange;Core Forge^white;",
+    "race" : "generic",
+    "category" : "crafting",
+    "health" : 1.5,
+    "price" : 1250,
+    "lightColor" : [250, 162, 75],
+
+    "flickerPeriod" : 0.5,
+    "flickerMinIntensity" : 0.75,
+    "flickerMaxIntensity" : 0.8,
+    "flickerPeriodVariance" : 0.0,
+    "flickerIntensityVariance" : 0.0,
+
+    "apexDescription" : "I can make my weapons more effective at this table.",
+    "avianDescription" : "I can make my weapons more effective at this table.",
+    "floranDescription" : "Floran can get better huntsss with this.",
+    "glitchDescription" : "Observant. Weapons I've found can be upgraded here.",
+    "humanDescription" : "This device can make my weapons do more damage.",
+    "hylotlDescription" : "I can make my weapons more effective at this table.",
+    "novakidDescription" : "This thing can make my stuff better!",
+
+    "inventoryIcon" : "icon.png",
+    "orientations" : [
+    {
+        "imageLayers" : [ { "image" : "ct_wupgradetable.png:<frame>", "fullbright" : true }, { "image" : "ct_wupgradetablelit.png:<frame>" } ],
+        "flipImages" : true,
+        "direction" : "left",
+        "lightPosition" : [0, 1],
+
+        "imagePosition" : [-16, 0],
+        "frames" : 4,
+        "animationCycle" : 0.5,
+
+        "spaceScan" : 0.1,
+        "anchors" : [ "bottom" ],
+        "collision": "platform"
+        },
+        {
+            "imageLayers" : [ { "image" : "ct_wupgradetable.png:<frame>", "fullbright" : true }, { "image" : "ct_wupgradetablelit.png:<frame>" } ],
+            "direction" : "right",
+            "lightPosition" : [0, 1],
+
+            "imagePosition" : [-16, 0],
+            "frames" : 4,
+            "animationCycle" : 0.5,
+
+            "spaceScan" : 0.1,
+            "anchors" : [ "bottom" ],
+            "collision": "platform"
+        }
+    ],
+
+    "soundEffect" : "/sfx/objects/scififurnace.ogg",
+    "soundEffectRangeMultiplier" : 1.0,
+
+    "scripts": ["ct_wupgradeobject.lua"],
+    "objectType": "container",
+    "uiConfig" : "/interface/scripted/ct_wupgradetable/ct_wupgradetablegui.config",
+    "subtitle" : "Upgrades generated weapons",
+    "slotCount" : 2,
+    "frameCooldown": 5,
+    "autoCloseCooldown": 3600
+}

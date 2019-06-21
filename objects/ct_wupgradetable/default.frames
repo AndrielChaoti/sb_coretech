@@ -4,19 +4,23 @@
     Author:         AndrielChaoti
 
 
-    File:           player.config.patch
-    Purpose:        Recipe patch information.
+    File:           default.frames
+    Purpose:        Animation information
 
     Copyright (c) Donald Granger. All Rights Reserved
     Licensed under the MIT License. See LICENSE file in the project root
     for full license information.
 */
-[
-    {
-        "op": "add",
-        "path": "/defaultBlueprints/tier1/-",
-        "value": {
-            "item": "blaststone"
-        }
-    }
-]
+{
+  "frameGrid" : {
+    "size" : [32, 16],
+    "dimensions" : [4, 1],
+    "names" : [
+      [ "0", "1", "2", "3" ]
+    ]
+  },
+
+  "aliases" : {
+    "default" : "0"
+  }
+}
