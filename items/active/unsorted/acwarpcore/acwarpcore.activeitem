@@ -1,25 +1,25 @@
 {
-  "itemName": "acwarpcore",
-  "price": 400,
-  "maxStack": 1,
-  "rarity": "uncommon",
-  "description": "Warps you back to your ship!",
-  "shortdescription": "Warp Core",
-  "twoHanded": true,
-  "category": "tool",
-  "inventoryIcon": "acwarpcore.png",
-  "animationCustom": {
-    "sounds": {
-      "fire": [
-        "/sfx/melee/swing_hammer.ogg"
-      ],
-      "deny": [
-        "/sfx/interface/clickon_error.ogg"
-      ]
-    }
-  },
-  "scripts": [
-    "acwarpcore.lua"
-  ],
-  "scriptDelta": 1
+	"itemName": "acwarpcore",
+	"price": 400,
+	"maxStack": 1,
+	"rarity": "uncommon",
+	"description": "Warps you back to your ship!",
+	"shortdescription": "Warp Core",
+	"twoHanded": true,
+	"category": "tool",
+	"inventoryIcon": "acwarpcore.png",
+	"animationCustom": {
+		"sounds": {
+			"fire": [
+				"/sfx/melee/swing_hammer.ogg"
+			],
+			"deny": [
+				"/sfx/interface/clickon_error.ogg"
+			]
+		}
+	},
+	"scripts": [
+		"acwarpcore.lua"
+	],
+	"scriptDelta": 1
 }

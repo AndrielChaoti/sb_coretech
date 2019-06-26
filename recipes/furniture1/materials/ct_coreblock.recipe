@@ -1,12 +1,9 @@
 {
-    "input" : [
-        {"item" : "blaststone", "count" : 20},
-        {"item" : "corefragmentore", "count" : 5}
-    ],
-    "output": {
-        "item" : "ct_coreblock",
-        "count" : 50
-    },
-    "duration" : 0.5,
-    "groups"  : [ "craftingfurniture", "materials", "all" ]
+	"input" : [
+		{"item" : "blaststone", "count" : 20},
+		{"item" : "corefragmentore", "count" : 5}
+	],
+	"output": {"item" : "ct_coreblock", "count" : 50},
+	"duration" : 0.5,
+	"groups"  : [ "craftingfurniture", "materials", "all" ]
 }

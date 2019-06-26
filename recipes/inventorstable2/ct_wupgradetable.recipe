@@ -1,16 +1,3 @@
-/*
-	Project:		acwupgradetable
-	Friendly Name:	Weapon Upgrade Table
-	Author:			AndrielChaoti
-
-
-	File:			acwupgradetable.recipe
-	Purpose:		Recipe information.
-
-	Copyright (c) Donald Granger. All Rights Reserved
-	Licensed under the MIT License. See LICENSE file in the project root
-	for full license information.
-*/
 {
 	"input" : [
 		{"item" : "tungstenbar", "count" : 10},
@@ -18,10 +5,7 @@
 		{"item" : "moonrock", "count" : 50},
 		{"item" : "blaststone", "count" : 5}
 	],
-	"output": {
-		"item" : "ct_wupgradetable",
-		"count" : 1
-	},
+	"output": {"item" : "ct_wupgradetable", "count" : 1},
 	"duration" : 5,
 	"groups" : [ "inventorstable2", "craftingstations", "all" ]
 }

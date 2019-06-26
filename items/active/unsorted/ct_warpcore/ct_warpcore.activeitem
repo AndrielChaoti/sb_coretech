@@ -1,25 +1,25 @@
 {
-  "itemName": "ct_warpcore",
-  "price": 400,
-  "maxStack": 1,
-  "rarity": "uncommon",
-  "description": "Warps you back to your ship!",
-  "shortdescription": "Warp Core",
-  "twoHanded": true,
-  "category": "tool",
-  "inventoryIcon": "ct_warpcore.png",
-  "animationCustom": {
-    "sounds": {
-      "fire": [
-        "/sfx/melee/swing_hammer.ogg"
-      ],
-      "deny": [
-        "/sfx/interface/clickon_error.ogg"
-      ]
-    }
-  },
-  "scripts": [
-    "ct_warpcore.lua"
-  ],
-  "scriptDelta": 1
+	"itemName": "ct_warpcore",
+	"price": 400,
+	"maxStack": 1,
+	"rarity": "uncommon",
+	"description": "Warps you back to your ship!",
+	"shortdescription": "Warp Core",
+	"twoHanded": true,
+	"category": "tool",
+	"inventoryIcon": "ct_warpcore.png",
+	"animationCustom": {
+		"sounds": {
+			"fire": [
+				"/sfx/melee/swing_hammer.ogg"
+			],
+			"deny": [
+				"/sfx/interface/clickon_error.ogg"
+			]
+		}
+	},
+	"scripts": [
+		"ct_warpcore.lua"
+	],
+	"scriptDelta": 1
 }

@@ -1,22 +1,9 @@
-/*
-    Project:        acwupgradetable
-    Friendly Name:  Weapon Upgrade Table
-    Author:         AndrielChaoti
-
-
-    File:           player.config.patch
-    Purpose:        Recipe patch information.
-
-    Copyright (c) Donald Granger. All Rights Reserved
-    Licensed under the MIT License. See LICENSE file in the project root
-    for full license information.
-*/
 [
-    {
-        "op": "add",
-        "path": "/defaultBlueprints/tier1/-",
-        "value": {
-            "item": "blaststone"
-        }
-    }
+	{
+		"op": "add",
+		"path": "/defaultBlueprints/tier1/-",
+		"value": {
+			"item": "blaststone"
+		}
+	}
 ]

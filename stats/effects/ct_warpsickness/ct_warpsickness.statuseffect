@@ -1,8 +1,8 @@
 {
-  "name" : "ct_warpsickness",
-  "blockingStat" : "",
-  "effectConfig" : {},
-  "defaultDuration" : 300,
-  "label" : "Warp Core Sickness",
-  "icon" : "/stats/effects/ct_warpsickness/ct_warpsickness.png"
+	"name" : "ct_warpsickness",
+	"blockingStat" : "",
+	"effectConfig" : {},
+	"defaultDuration" : 300,
+	"label" : "Warp Core Sickness",
+	"icon" : "/stats/effects/ct_warpsickness/ct_warpsickness.png"
 }
