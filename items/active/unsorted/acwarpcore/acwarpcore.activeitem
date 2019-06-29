@@ -4,7 +4,7 @@
 	"maxStack": 1,
 	"rarity": "uncommon",
 	"description": "Warps you back to your ship!",
-	"shortdescription": "Warp Core",
+	"shortdescription": "Warp Core ^red;[DEPRECATED]^white;",
 	"twoHanded": true,
 	"category": "tool",
 	"inventoryIcon": "acwarpcore.png",

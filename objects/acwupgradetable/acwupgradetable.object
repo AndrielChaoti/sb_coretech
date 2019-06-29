@@ -4,7 +4,7 @@
 	"printable" : false,
 	"rarity" : "Rare",
 	"description" : "A table where you can tinker with your weapons and make them better.",
-	"shortdescription" : "^orange;Weapon Upgrade Table^white;",
+	"shortdescription" : "^orange;Weapon Upgrade Table ^red;[DEPRECATED]^white;",
 	"race" : "generic",
 	"category" : "crafting",
 	"health" : 1.5,

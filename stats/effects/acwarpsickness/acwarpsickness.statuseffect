@@ -3,7 +3,7 @@
 	"blockingStat" : "",
 	"effectConfig" : {},
 	"defaultDuration" : 300,
-	"label" : "Warp Core Sickness",
+	"label" : "Warp Core Sickness ^red;[DEPRECATED]^white;",
 	"icon" : "/stats/effects/acwarpsickness/acwarpsickness.png",
 	"scripts": [ "acwarpsickness.lua" ]
 }
