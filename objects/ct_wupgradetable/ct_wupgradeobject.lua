@@ -13,6 +13,6 @@ function init(...)
 	end)
 
 	message.setHandler("ct_UpgradeGet", function(...)
-		return {storage.upgradeState, storage.upgradeConfig or {}};
+		return {storage.upgradeState or {}, storage.upgradeConfig or {}};
 	end)
 end

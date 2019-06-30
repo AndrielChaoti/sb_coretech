@@ -96,6 +96,7 @@ function uninit()
 		world.containerTakeAll(self._id)
 		player.giveItem(item)
 		self.upgradeConfig = nil
+		self.upgradeState = nil
 	end
 	world.sendEntityMessage(self._id, "ct_UpgradeSet", self.upgradeState, self.upgradeConfig)
 end
