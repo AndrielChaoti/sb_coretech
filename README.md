@@ -1,7 +1,7 @@
 Gives you more things to do with core fragments!
 
 # Installation
-You can install this mod through [Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=1772732697), or the [Chucklefish Forums](https://community.playstarbound.com/resources/core-tech.5782/)
+You can install this mod through [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1772732697), or the [Chucklefish Forums](https://community.playstarbound.com/resources/core-tech.5782/)
 
 # What this mod adds
 ## ![Icon](https://i.imgur.com/fb5G0nC.png) Core Forge
