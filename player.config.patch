@@ -1,9 +1,4 @@
 [
-	{
-		"op": "add",
-		"path": "/defaultBlueprints/tier1/-",
-		"value": {
-			"item": "blaststone"
-		}
-	}
+	{"op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "blaststone"}},
+	{"op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "ct_warpcore2"}}
 ]

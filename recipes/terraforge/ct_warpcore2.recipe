@@ -1,0 +1,10 @@
+{
+	"input" : [
+		{"item" : "ct_warpcore", "count" : 1},
+		{"item" : "solariumstar", "count": 10},
+		{"item" : "essence", "count": 5000}
+	],
+	"output": {"item" : "ct_warpcore2", "count" : 1},
+	"duration" : 0,
+	"groups" : [ "terraforge", "all" ]
+}

@@ -1,0 +1,25 @@
+{
+	"itemName": "ct_warpcore2",
+	"price": 400,
+	"maxStack": 1,
+	"rarity": "legendary",
+	"description": "Warp Core 2: Electric Boogaloo. Isn't consumed when used.",
+	"shortdescription": "Stable Warp Core",
+	"twoHanded": true,
+	"category": "tool",
+	"inventoryIcon": "ct_warpcore2.png",
+	"animationCustom": {
+		"sounds": {
+			"fire": [
+				"/sfx/melee/swing_hammer.ogg"
+			],
+			"deny": [
+				"/sfx/interface/clickon_error.ogg"
+			]
+		}
+	},
+	"scripts": [
+		"ct_warpcore2.lua"
+	],
+	"scriptDelta": 1
+}
